@@ -1,0 +1,542 @@
+.invoice-container {
+    border: 1px solid #e3e3e3;
+}
+.invheader {
+	min-height: 270px;
+	position: relative;
+}
+.invbody-terms textarea {
+    height:200px;
+}
+.invbody-terms span,
+.user-address span,
+.client-address span {
+    white-space: pre;
+}
+
+.invheader [role=button],
+.invbody-terms [role=button] {
+    position: absolute;
+    right: 0;
+}
+
+.inv-header-paid {
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	top: 0;
+	left: 50%;
+	margin-left: -100px;
+	background: url("../../../images/invoice/stamp-paid-300.gif") center top no-repeat;
+	background-image-resolution: 300dpi;
+	z-index: 0;
+}
+
+.invheader-upper {
+	z-index: 10;
+	position: relative;
+	min-height: 110px;
+}
+.invheader-lower {
+	clear: both;
+	margin-top: 54px;
+	min-height: 126px;
+}
+
+.invheader-address-account {
+	float: left;
+	width: 300px;
+	margin-bottom: 20px;
+    position: relative;
+}
+
+.invheader-logo-container {
+	width: 250px;
+	height: 110px;
+	float: right;
+}
+
+.invheader-address-client {
+	float: left;
+	width: 300px;
+	padding-bottom: 20px;
+    position: relative;
+}
+.invheader-invoicedetails {
+	float: right;	
+	width: 290px;
+	padding-bottom: 20px;
+}
+.BoardCreateRep {
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgb(243, 243, 243);
+    border: 2px dashed #bbb;
+    color: #888;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    width: 250px;
+    height: 110px;
+    top:0;
+    left:0;
+}
+.BoardCreateRep .drop-avatar {
+    border: none !important;
+}
+
+.editing span {
+    display:none;
+}
+.edit-container {
+    margin-top:15px;
+}
+
+.invbody-items td {
+    cursor:pointer;
+}
+.invbody-items td:last-child {
+    cursor:default;
+}
+.invbody-items tr .destroy {
+	display: none;
+	position: absolute;
+	top: 0;
+	left:-15px;
+	bottom: 0;
+	width: 20px;
+	height: 20px;
+	margin: auto 0;
+	font-size: 22px;
+	color: rgb(180,0,0);
+	opacity: 0.3;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.invbody-items tr .destroy:hover {
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+	opacity: 1;
+    text-decoration:none;
+}
+
+.invbody-items tr .destroy:after {
+	content: '✖';
+}
+
+.invbody-items tr:hover .destroy {
+	display: block;
+}
+
+.form-control {
+    height:25px;
+}
+
+.invheader,
+.invheader th,
+.invbody,
+.invbody .description,
+.invstub,
+.invstub th,
+.invstub-viewestimate,
+.attachment-header,
+.attachment-header th {
+	font-family: Arial, "Arial Unicode", "Arial Unicode MS", Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	text-align: left;
+}
+
+.invheader-logo {
+	text-align: right;	
+	font-size: 11px;
+	line-height: 12px;
+    position:relative;
+}
+
+
+/* invoice details */
+.attachment-image {
+	text-align: center;
+	margin-top: 24px;
+}
+
+.invheader-invoicedetails table, .attachment-header {
+	width: 100%;
+}
+.invheader-invoicedetails table th {
+	width: 50%;
+	font-weight: normal;
+	white-space: nowrap;
+}
+.invheader-invoicedetails table td,
+.attachment-header td {
+	text-align: right;
+}
+.invheader-invoicedetails th, .invheader-invoicedetails td {
+	padding: 0px 5px;
+}
+
+.invheader-invoicedetails .invheader-invoicedetails-balance th, .invheader-invoicedetails .invheader-invoicedetails-balance td,
+.attachment-header th, .attachment-header td {
+	background-color: #e5e5e5;
+	border-top: solid 1px #c7c7c7;
+	border-bottom: solid 1px #c7c7c7;
+	padding: 0px;
+	font-weight: bold;
+}
+.attachment-header td {
+	font-weight: normal;
+}
+.attachment-header th, .attachment-header td {
+	vertical-align: top;
+}
+.invheader-invoicedetails .invheader-invoicedetails-balance th, .attachment-header th { border-left: solid 1px #c7c7c7; }
+.invheader-invoicedetails .invheader-invoicedetails-balance td, .attachment-header td { border-right: solid 1px #c7c7c7; }
+.invheader-invoicedetails .invheader-invoicedetails-balance th div, .attachment-header th div { 
+	border-left: solid 1px #f1f1f1; 
+	border-top: solid 1px #f1f1f1; 
+	padding: 3px 5px;
+}
+.invheader-invoicedetails .invheader-invoicedetails-balance td div, .attachment-header td div { 
+	border-top: solid 1px #f1f1f1; 
+	padding: 3px 5px;
+}
+
+
+/* 
+ * 		TABLE 
+ */
+
+.invbody-items, .invbody-expenses, .invbody-timeentries {
+	width: 100%;
+	margin-bottom: 24px;
+}
+
+.invbody-items td, .invbody-expenses td, .invbody-timeentries td {
+	vertical-align: top;
+}
+
+.invbody-items thead, .invbody-expenses thead, .invbody-timeentries thead {
+	font-weight: bold;
+	page-break-after: avoid;
+}
+
+.invbody-items tbody, .invbody-expenses tbody, .invbody-timeentries tbody {
+	page-break-before: avoid;
+	vertical-align: top;
+}
+
+.invbody-items td, .invbody-expenses td, .invbody-timeentries td {
+	padding: 3px 0px 3px 2px;
+	border-bottom: solid 1px #e5e5e5;
+    position:relative;
+}
+
+.invbody-items th, .invbody-expenses th, .invbody-timeentries th {
+	background-color: #e3e3e3;
+	line-height: normal;	
+	border-top: solid 1px #c7c7c7;
+	border-bottom: solid 1px #c7c7c7;
+	vertical-align: top;
+}
+.invbody-items th div, .invbody-expenses th div, .invbody-timeentries th div {
+	padding: 5px 0;
+}
+.invbody-items th.first, .invbody-expenses th.first, .invbody-timeentries th.first {
+	border-left: solid 1px #c7c7c7;
+}
+
+.invbody-items th.last, .invbody-expenses th.last, .invbody-timeentries th.last {
+	border-right: solid 1px #c7c7c7;
+}
+
+
+/* 
+ * 		ITEMS TABLE 
+ */
+.invbody-items thead .item {
+	border-left: solid 1px #f1f1f1;
+	border-top: solid 1px #f1f1f1;
+	padding-left: 5px;
+	text-align: left;
+}
+.invbody-items tbody .item {
+	padding-left: 5px;
+	text-align: left;
+}
+
+.invbody-items thead .description {
+	border-top: solid 1px #f1f1f1;
+	text-align: left;
+}
+
+.invbody-items thead .unitcost {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+}
+.invbody-items tbody .unitcost {
+	text-align: right;
+}
+
+.invbody-items thead .quantity {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+	padding-right: 5px;
+}
+.invbody-items tbody .quantity {
+	text-align: right;
+	padding-right: 5px;
+}
+
+.invbody-items thead .linetotal {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+	padding-right: 5px;
+}
+.invbody-items tbody .linetotal {
+	text-align: right;
+	padding-right: 5px;
+}
+.placeholder {
+	background:#f0f0f0;
+	font-style:italic;
+}
+
+
+/* 
+ * 		EXPENSE TABLE 
+ */
+
+.invbody-expenses thead .description {
+	border-left: solid 1px #f1f1f1;
+	border-top: solid 1px #f1f1f1;
+	padding-left: 5px;
+	text-align: left;
+}
+.invbody-expenses tbody .description {
+	padding-left: 5px;
+	text-align: left;
+}
+
+.invbody-expenses thead .unitcost {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+}
+.invbody-expenses tbody .unitcost {
+	text-align: right;
+}
+
+.invbody-expenses thead .quantity {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+}
+.invbody-expenses tbody .quantity {
+	text-align: right;
+}
+
+.invbody-expenses thead .linetotal {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+	padding-right: 5px;
+}
+.invbody-expenses tbody .linetotal {
+	text-align: right;
+	padding-right: 5px;
+}
+
+
+
+/* 
+ * 		TIME ENTRIES TABLE 
+ */
+
+.invbody-timeentries thead .notes {
+	border-left: solid 1px #f1f1f1;
+	border-top: solid 1px #f1f1f1;
+	padding-left: 5px;
+	text-align: left;
+}
+.invbody-timeentries tbody .notes{
+	padding-left: 5px;
+	text-align: left;
+}
+
+.invbody-timeentries thead .rate {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+}
+.invbody-timeentries tbody .rate {
+	text-align: right;
+}
+
+.invbody-timeentries thead .hours {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+}
+.invbody-timeentries tbody .hours {
+	text-align: right;
+}
+
+.invbody-timeentries thead .linetotal {
+	border-top: solid 1px #f1f1f1;
+	text-align: right;
+	padding-right: 5px;
+}
+.invbody-timeentries tbody .linetotal {
+	text-align: right;
+	padding-right: 5px;
+}
+
+
+/* 
+ * 		SUMMARY TABLE 
+ */
+.invbody-summary {
+	width: 100%;
+	border-top: solid 3px #e3e3e3;
+	margin-bottom: 18px;
+}
+.invbody-summary th {
+	font-weight: normal;
+	text-align: left;
+}
+.invbody-summary td {
+	text-align: right;
+}
+.invbody-summary th, .invbody-summary td {
+	padding: 0px 5px;
+}
+.invbody-summary .border {
+	border-top: solid 1px #e5e5e5;
+	padding-top: 3px;
+}
+.invbody-summary-paid td, .invbody-summary-paid th { padding-bottom: 3px; }
+.invbody-summary-subtotal td, .invbody-summary-subtotal th { padding-top: 3px; }
+.invbody-summary-discount td, .invbody-summary-discount th { padding-top: 3px; }
+.invbody-summary .invbody-summary-clean {
+	border: 0px;
+	background-color: transparent;
+}
+.invbody-summary-total td, .invbody-summary-total th {
+	background-color: #e5e5e5;
+	border-top: solid 1px #c7c7c7;
+	border-bottom: solid 1px #c7c7c7;
+	padding: 0px;
+}
+.invbody-summary-total th { border-left: solid 1px #c7c7c7; }
+.invbody-summary-total td { border-right: solid 1px #c7c7c7; border-left: 1px solid #c7c7c7; }
+.invbody-summary .invbody-summary-total th div { 
+	border-left: solid 1px #f1f1f1; 
+	border-top: solid 1px #f1f1f1; 
+	padding: 3px 5px;
+}
+.invbody-summary .invbody-summary-total td div { 
+	border-top: solid 1px #f1f1f1; 
+	padding: 3px 5px;
+}
+
+/* 
+ * 		TERMS AND NOTES
+ */
+.invbody-terms, .invbody-notes {
+	width: 80%;
+	margin-bottom: 18px;
+    position:relative;
+}
+.invbody-terms h2, .invbody-notes h2 {
+	font-size: 12px;
+	margin: 0px;
+}
+
+
+/* 
+ * 		TERMS AND NOTES
+ */
+.invoice-brand {
+	float: right;
+	font-size: 11px;
+	margin-top: 22px;
+	margin-right: 1px;
+	color: #777777;
+}
+.invoice-brand a:hover {
+	background-color: transparent;
+}
+.invoice-brand a:active {
+	outline: none;	
+}
+
+
+/* 
+ * 		PAYMENT STUB
+ */
+.invstub {
+	border-top: dashed 1px #000000;
+}
+
+.invstub-title {
+	font-size: 26px;
+  	text-transform: uppercase;
+  	font-weight: bold;
+}
+
+.invstub-view {
+	background-color: #F2F2F2;
+	min-height: 54px;
+	padding: 3px 5px;
+}
+
+
+.invstub-details table {
+	width: 100%;
+}
+.invstub-details table th {
+	width: 50%;
+	padding-left: 5px;
+	text-align: left;
+}
+.invstub-details table td {
+	text-align: right;
+	padding-right: 5px;
+}
+
+.invstub-details table tr.invstub-details-2 td, .invstub-details  table tr.invstub-details-2 th {
+	border-bottom: solid 1px #e5e5e5;
+	padding-bottom: 5px;
+}
+
+.invstub-details table tr.invstub-details-3 td, .invstub-details  table tr.invstub-details-3 th {
+	border-bottom: solid 1px #e5e5e5;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.invstub-details table tr.invstub-details-4 td, .invstub-details  table tr.invstub-details-4 th {
+	border-bottom: solid 1px #e5e5e5;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+/* 
+ * 		VIEW ESTIMATE
+ */
+
+.invstub-viewestimate {
+	background-color: #F2F2F2;
+	padding: 9px 5px;
+	text-align: center;
+}

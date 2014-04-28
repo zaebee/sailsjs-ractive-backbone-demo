@@ -1,0 +1,44 @@
+<div class="invheader-address-client" on-hover="toggleBtn">
+  <a role="button" title="{{ .editing ? 'Сохранить' : 'Изменить заказчика' }}"
+    class="hidden-print btn btn-primary btn-sm hide"
+    on-click="edit"><i class="glyphicon glyphicon-{{ .editing ? 'ok' : 'pencil' }}"></i>
+  </a>
+  <b>Заказчик:</b>
+  <div class="cleint-name {{ .editing ? 'editing' : '' }}">
+    <span>{{^invoice.name}}Без имени{{/invoice.name}}{{invoice.name}}</span>
+    {{#.editing}}
+      <div class='edit-container'>
+        <input intro="select" value="{{invoice.name}}"
+        class="form-control" placeholder="Напишите название компании клиента">
+      </div>
+    {{/.editing}}
+  </div>
+  <div class="client-address {{ .editing ? 'editing' : '' }}">
+    <span>{{^invoice.address}}Адрес не указан{{/invoice.address}}{{{invoice.address}}}</span>
+    {{#.editing}}
+      <div class='edit-container'>
+        <textarea value="{{invoice.address}}" class="edit form-control"
+          placeholder="Напишите адрес компании клиента">{{invoice.address}}</textarea>
+      </div>
+    {{/.editing}}
+  </div>
+</div>
+
+<div class="invheader-invoicedetails">
+  <table cellspacing="0">
+    <tbody>
+      <tr>
+        <th>Номер счета</th>
+        <td>#{{ lastFour(invoice.id) }}</td>
+      </tr>
+      <tr>
+        <th>Дата &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</th>
+        <td>{{ date(invoice.createdAt) }}</td>
+      </tr>
+      <tr class="invheader-invoicedetails-balance">
+        <th><div>Итого к оплате &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div></th>
+        <td><div>&nbsp;{{^invoice.total_amount}}0.00{{/invoice.total_amount}}{{ invoice.total_amount }}  руб &nbsp; &nbsp; &nbsp;</div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

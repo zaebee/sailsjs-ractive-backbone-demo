@@ -1,0 +1,42 @@
+<div class="invheader-address-account" on-hover="toggleBtn">
+  <a role="button" title="{{ .editing ? 'Сохранить' : 'Изменить исполнителя' }}"
+    class="hidden-print btn btn-primary btn-sm hide"
+    on-click="edit"><i class="glyphicon glyphicon-{{ .editing ? 'ok' : 'pencil' }}"></i>
+  </a>
+  <b>Исполнитель:</b>
+  <div class="user-name {{ .editing ? 'editing' : '' }}">
+    <span>{{^name}}Без имени{{/name}}{{name}}</span>
+    {{#.editing}}
+      <div class='edit-container'>
+        <input intro="select" value="{{name}}" class="form-control"
+        placeholder="Напишите ваше ФИО">
+      </div>
+    {{/.editing}}
+  </div>
+  <div class="user-address {{ .editing ? 'editing' : '' }}">
+    <span>{{^address}}Адрес не указан{{/address}}{{{address}}}</span>
+    {{#.editing}}
+      <div class='edit-container'>
+        <textarea value="{{address}}" class='edit form-control'
+          placeholder="Напишите ваш адрес">{{address}}</textarea>
+      </div>
+    {{/.editing}}
+  </div>
+</div>
+
+<div on-hover="togglePicker" class="invheader-logo-container">
+  <div class="invheader-logo">
+    {{#avatar}}
+      <img src="{{avatar}}/convert?h=110&w=250" alt="{{name}}">
+    {{/avatar}}
+    <div class="hidden-print BoardCreateRep {{ avatar ? 'hide' : '' }}">
+      <input type="filepicker-dragdrop" data-fp-mimetype="image/png"
+        data-fp-apikey="A3lXl09sRSejY4e0pOOSQz"
+        data-fp-button-class="btn btn-primary hidden-print"
+        data-fp-button-text="Загрузите аватар"
+        data-fp-drag-text="или бросьте сюда"
+        data-fp-drag-class="hidden-print drop-avatar"
+        onchange="app.user.fire('setAvatar', event)">
+    </div>
+  </div>
+</div>

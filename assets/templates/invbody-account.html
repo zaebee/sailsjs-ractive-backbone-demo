@@ -1,0 +1,15 @@
+<div class="invbody-terms" on-hover="toggleBtn">
+  <a role="button" title="{{ .editing ? 'Сохранить' : 'Изменить реквизиты' }}"
+    class="hidden-print btn btn-primary btn-sm hide"
+    on-click="edit"><i class="glyphicon glyphicon-{{ .editing ? 'ok' : 'pencil' }}"></i>
+  </a>
+  <b>Реквизиты:</b>
+  <div class="user-account {{ .editing ? 'editing' : '' }}">
+    <span>{{^account}}Реквизиты не указаны{{/account}}{{{account}}}</span>
+    {{#.editing}}
+      <div class='edit-container'>
+        <textarea value="{{account}}" class='edit form-control' placeholder="Напишите ваши реквизиты для платежей">{{account}}</textarea>
+      </div>
+    {{/.editing}}
+  </div>
+</div>

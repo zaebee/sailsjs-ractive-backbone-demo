@@ -1,0 +1,69 @@
+<table class="invbody-items" cellspacing="0">
+  <thead>
+    <tr>
+      <th class="first"><div class="item">Наименование работ &nbsp; &nbsp;&nbsp;</div></th>
+      <th><div class="description">Описание, замечания по работам &nbsp; &nbsp;&nbsp;</div></th>
+      <th><div class="unitcost">Ставка (руб)</div></th>
+      <th><div class="quantity">Количество часов &nbsp; &nbsp;&nbsp;</div></th>
+      <th class="last"><div class="linetotal">Сумма (руб)</div></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#tasks}}
+    <tr>
+      <td style="width: 160px;">
+        <a on-tap="destroy:{{this}}" role="button" class='hidden-print destroy'></a>
+        <div on-click="edit" class="item">{{name}}</div>
+        <input intro="select" class="form-control hide" value="{{name}}" on-blur-enter="hide:{{this}}">
+      </td>
+      <td>
+        <div on-click="edit" class="description">{{description}}</div>
+        <textarea class="form-control hide" value="{{description}}" on-blur-enter="hide:{{this}}">{{description}}</textarea>
+      </td>
+      <td style="width: 85px;">
+        <div on-click="edit" class="unitcost">{{ format(rate) }}</div>
+        <input class="form-control hide" value="{{rate}}" on-blur-enter="hide:{{this}}">
+      </td>
+      <td style="width: 80px;">
+        <div on-click="edit" class="quantity">{{ format(hours) }}</div>
+        <input class="form-control hide" value="{{hours}}" on-blur-enter="hide:{{this}}">
+      </td>
+      <td style="width: 90px;">
+        <div class="linetotal">{{ format(rate * hours) }}</div>
+      </td>
+    </tr>
+    {{/tasks}}
+
+    <tr>
+      <td class="hidden-print text-center" colspan="5">
+        <button on-click="add" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-plus "></i> Добавить</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<table class="invbody-summary" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="invbody-summary-clean">&nbsp;</td>
+      <td style="width: 150px;"><strong>К оплате: &nbsp; &nbsp;</strong></td>
+      <td style="width: 120px;"><strong>
+          {{ total(tasks) }}
+      </strong></td>
+    </tr>
+    <tr class="invbody-summary-paid">
+      <td class="invbody-summary-clean">&nbsp;</td>
+      <td style="width: 150px;">Оплачено &nbsp; &nbsp;</td>
+      <td style="width: 120px;">-0.00</td>
+    </tr>
+
+    <tr class="invbody-summary-total">
+      <td class="invbody-summary-clean">&nbsp;</td>
+      <td style="width: 150px;"><div><strong>Итого к оплате: &nbsp; &nbsp;</strong></div></td>
+      <td style="width: 120px;"><div><strong>
+          {{ total(tasks) }}
+      </strong></div></td>
+    </tr>
+  </tbody>
+</table>
